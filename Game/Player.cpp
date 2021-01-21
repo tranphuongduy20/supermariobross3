@@ -435,6 +435,7 @@ void Player::Update(DWORD dt, vector<LPGAMEENTITY>* coObjects)
 				{
 					endScene->SetState(ENDSCENE_STATE_COLLISION);
 					startEndScene = true;
+					endScene->showText = true;
 					startTickToEndScene = GetTickCount64();
 				}
 			}

@@ -1,8 +1,16 @@
 #include "EndScene.h"
+#include "Sprites.h"
+
+#define END_SCENE_ANI 111111								
+
 void EndScene::Render()
 {
 	animationSet->at(0)->Render(nx, x, y);
-	//RenderBoundingBox();
+
+	if (!showText)	return;
+	auto s = CSprites::GetInstance()->Get(END_SCENE_ANI);
+	s->Draw(1, 2630, 280, 255);
+
 }
 
 void EndScene::GetBoundingBox(float& l, float& t, float& r, float& b)
@@ -22,6 +30,7 @@ EndScene::EndScene(float posX, float posY, float frameW, float frameH)
 	tag = EntityType::ENDSCENE;
 	this->frameH = frameH;
 	this->frameW = frameW;
+	this->showText = false;
 }
 
 void EndScene::SetState(int state)

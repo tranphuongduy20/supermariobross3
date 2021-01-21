@@ -185,6 +185,9 @@
     <ClCompile Include="BulletKoopa.cpp">
       <Filter>Header Files\GameSource\Bullet</Filter>
     </ClCompile>
+    <ClCompile Include="Text.cpp">
+      <Filter>Header Files\GameSource\Object\Obstacle</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bullet.h">
@@ -370,6 +373,9 @@
     </ClInclude>
     <ClInclude Include="BulletKoopa.h">
       <Filter>Header Files\GameSource\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.h">
+      <Filter>Header Files\GameSource\Object\Obstacle</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,29 +1,43 @@
 #include "Text.h"
-
-Text::Text() {}
-
-Text::~Text() {}
-
-void Text::Render(float posX, float posY, const string& str)
+void Text::Render()
 {
-	for (UINT i = 0; i < str.size(); i++)
-	{
-		//Hien tai chi dung so'
-		if (str[i] >= '0' && str[i] <= '9')
-		{
-			textSpr = CSprites::GetInstance()->Get(str[i] - '0' + TEXT_SPRITES);
-		}
-		else	//va dau tru	
-		{
-			textSpr = CSprites::GetInstance()->Get(TEXT_SUBSIGN_SPRITES);
-		}
-		textSpr->Draw(-1, posX + i * TEXT_SPACE_UNIT, posY);
-	}
+	animationSet->at(0)->Render(nx, x, y);
+	//RenderBoundingBox();
 }
 
-string Text::FillZeroString(string str, UINT MaxStringLenght)
+void Text::GetBoundingBox(float& l, float& t, float& r, float& b)
 {
-	while (str.size() < MaxStringLenght)
-		str = "0" + str;
-	return str;
+	l = x;
+	t = y;
+	r = x + frameW;
+	b = y + frameH;
+}
+
+Text::Text(float posX, float posY, float frameW, float frameH)
+{
+	x = posX;
+	y = posY;
+	oldY = posY;
+	isColliCbrick = false;
+	tag = EntityType::TEXT;
+	this->frameH = frameH;
+	this->frameW = frameW;
+}
+
+void Text::SetState(int state)
+{
+	Entity::SetState(state);
+
+}
+
+void Text::Update(DWORD dt, vector<LPGAMEENTITY>* coObjects)
+{
+	Entity::Update(dt, coObjects);
+	x += dx;
+	y += dy;
+	if (y >= oldY)
+	{
+		y = oldY;
+		vy = 0;
+	}
 }

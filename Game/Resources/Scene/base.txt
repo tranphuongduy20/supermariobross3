@@ -5,9 +5,12 @@
 2	Resources\Textures\Enemy\enemy.png	255	255	255
 3	Resources\Textures\Title\title-screen.png	255	242	0
 4	Resources\Textures\Title\title.png	255	255	255
+5	Resources\Textures\Title\ui.png	255	127	39
 -200	Resources\Textures\darken-the-screen.png	255	255	0
 # id	left	top	width	height	texture_id
 [SPRITES]
+#====TEXT====
+111111	82	3	149	25	5
 #----------BACKGROUND-----------------
 0	782	226	256	224	3
 #----------------- CURTAIN ------------------
@@ -378,7 +381,7 @@
 #0	20	365	1
 #0	1350	85	1
 #0	2050	365	1
-0	1045	230	1
+0	25	230	1
 #0	1950	230	1
 #Speech Bubble
 43	38.5	26	3

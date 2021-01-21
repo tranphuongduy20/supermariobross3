@@ -46,7 +46,7 @@ PlayScene::PlayScene() : Scene()
 {
 	keyHandler = new PlayScenceKeyHandler(this);
 	LoadBaseObjects();
-	ChooseMap(STAGE_1*3);
+	ChooseMap(STAGE_1*2);
 	Game::GetInstance()->ResetTimer();
 }
 

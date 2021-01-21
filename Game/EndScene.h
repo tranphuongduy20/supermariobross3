@@ -10,6 +10,7 @@ class EndScene : public Entity
 {
 public:
 	float frameW, frameH;
+	bool showText;
 	float oldY;
 	bool isColliCbrick;
 	virtual void SetState(int state);
